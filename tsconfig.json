@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@my-project/ui-components": ["libs/ui-components/src/index.ts"],
-      "@my-project/ui-components/*": ["libs/ui-components/src/*"]
+      "@witekrychlik/ui-components": ["libs/ui-components/src/index.ts"],
+      "@witekrychlik/ui-components/*": ["libs/ui-components/src/*"]
     }
   }
 }
