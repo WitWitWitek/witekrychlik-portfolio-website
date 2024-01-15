@@ -1,6 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.main-font {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.linear-gradient {
+  background: linear-gradient(to right, #b116ce, #ff5e69, #ff8a56, #ffa84b);
+}
+
+.text-linear-gradient {
+  background: linear-gradient(to right, #b116ce, #ff5e69, #ff8a56, #ffa84b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @layer base {
   :root {
