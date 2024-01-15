@@ -10,18 +10,19 @@
   font-family: inherit;
 }
 
+@layer components {
+  .text-linear-gradient {
+    background: linear-gradient(to right, #b116ce, #ff5e69, #ff8a56, #ffa84b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 .main-font {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .linear-gradient {
   background: linear-gradient(to right, #b116ce, #ff5e69, #ff8a56, #ffa84b);
-}
-
-.text-linear-gradient {
-  background: linear-gradient(to right, #b116ce, #ff5e69, #ff8a56, #ffa84b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 @layer base {

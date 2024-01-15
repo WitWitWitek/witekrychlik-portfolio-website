@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default async function Index() {
   return (
-    <section className="bg-slate-950 h-screen px-[100px] py-14 flex flex-row">
+    <section className="bg-slate-950 h-screen px-[100px] py-14 flex flex-row gap-x-40">
       <div className="h-full w-3/5 p-4 flex flex-col justify-center gap-2 text-white">
         <div className="text-6xl flex flex-col gap-2">
           <p>Cześć! 👋</p>
@@ -41,8 +41,8 @@ export default async function Index() {
           </div>
         </div>
       </div>
-      <div className="h-full w-2/5 p-4 flex justify-center items-center">
-        <div className="relative w-36 h-36 rounded-md overflow-hidden">
+      <div className="h-full w-2/5 flex justify-end items-center">
+        <div className="relative w-[300px] h-[300px] rounded-md overflow-hidden">
           <Image src="/logo.svg" alt="Logo strony witekrychlick.com.pl" fill />
         </div>
       </div>
