@@ -2,7 +2,7 @@ import { Button } from '@witekrychlik/ui-components';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default async function Index() {
+export default function Hero() {
   return (
     <section className="bg-slate-950 h-screen px-[100px] py-14 flex flex-row gap-x-40">
       <div className="h-full w-3/5 p-4 flex flex-col justify-center gap-2 text-white">
@@ -18,9 +18,9 @@ export default async function Index() {
         </div>
         <div className="flex flex-col gap-2">
           <p>
-            Jestem młodym pasjonatem web developmentu, gotowym przekształcić
-            Twoje pomysły w wirtualną rzeczywistość. Razem możemy stworzyć
-            projekt, który nie tylko zachwyci wizualnie, ale także dostarczy
+            Jestem pasjonatem web developmentu, gotowym przekształcić Twoje
+            pomysły w wirtualną rzeczywistość. Razem możemy stworzyć projekt,
+            który nie tylko zachwyci wizualnie, ale także dostarczy
             niezapomniane wrażenia użytkownikom. Daj mi szansę pomóc Ci w
             urzeczywistnieniu Twoich internetowych marzeń!
           </p>
