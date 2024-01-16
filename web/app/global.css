@@ -8,21 +8,33 @@
   padding: 0;
   box-sizing: border-box;
   font-family: inherit;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --linear-gradient: linear-gradient(
+    to right,
+    #b116ce,
+    #ff5e69,
+    #ff8a56,
+    #ffa84b
+  );
 }
 
 @layer components {
   .text-linear-gradient {
-    background: linear-gradient(to right, #b116ce, #ff5e69, #ff8a56, #ffa84b);
+    background: var(--linear-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
+
 .main-font {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .linear-gradient {
-  background: linear-gradient(to right, #b116ce, #ff5e69, #ff8a56, #ffa84b);
+  background: var(--linear-gradient);
 }
 
 @layer base {
