@@ -22,10 +22,8 @@
 }
 
 @layer components {
-  .text-linear-gradient {
-    background: var(--linear-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .p-section-lg {
+    @apply px-[100px] py-14;
   }
 }
 
@@ -35,6 +33,12 @@
 
 .linear-gradient {
   background: var(--linear-gradient);
+}
+
+.text-linear-gradient {
+  background: var(--linear-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @layer base {

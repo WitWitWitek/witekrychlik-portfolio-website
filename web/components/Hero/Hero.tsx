@@ -1,12 +1,13 @@
 import { Button } from '@witekrychlik/ui-components';
 import Image from 'next/image';
 import Link from 'next/link';
+import Section from 'libs/ui-components/src/components/ui/section';
 
 export default function Hero() {
   return (
-    <section className="bg-slate-950 h-screen px-[100px] py-14 flex flex-row gap-x-40">
-      <div className="h-full w-3/5 p-4 flex flex-col justify-center gap-2 text-white">
-        <div className="text-6xl flex flex-col gap-2">
+    <Section className="bg-slate-950 flex flex-col lg:flex-row gap-x-40">
+      <div className="h-full lg:w-3/5 lg:p-4 flex flex-col justify-center gap-4 text-white">
+        <div className="text-6xl flex flex-col gap-4">
           <p>Cześć! 👋</p>
           <p className="font-bold">
             Jestem <span className="text-linear-gradient">Witold Rychlik</span>
@@ -16,7 +17,7 @@ export default function Hero() {
             <span className="italic">Web developer</span>
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <p>
             Jestem pasjonatem web developmentu, gotowym przekształcić Twoje
             pomysły w wirtualną rzeczywistość. Razem możemy stworzyć projekt,
@@ -24,14 +25,14 @@ export default function Hero() {
             niezapomniane wrażenia użytkownikom. Daj mi szansę pomóc Ci w
             urzeczywistnieniu Twoich internetowych marzeń!
           </p>
-          <div className="flex w-full gap-2">
+          <div className="flex flex-wrap w-full gap-4">
             <Button variant="default">Formularz kontaktowy</Button>
             <Button variant="default">Technologie</Button>
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <p>Sprawdź:</p>
-          <div className="flex w-full gap-2">
+          <div className="flex w-full gap-4">
             <Link href="https://github.com/WitWitWitek">
               <Button variant="destructive">Git</Button>
             </Link>
@@ -46,6 +47,6 @@ export default function Hero() {
           <Image src="/logo.svg" alt="Logo strony witekrychlick.com.pl" fill />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
