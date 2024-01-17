@@ -8,13 +8,13 @@ import { cn } from '../../utils';
 interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   target: string;
   label: string;
-  type?: 'link' | 'secondary';
+  variant?: 'link' | 'secondary';
 }
 
 export function NavLink({
   target,
   label,
-  type = 'link',
+  variant = 'link',
   className,
 }: NavLinkProps) {
   const pathname = usePathname();
@@ -23,10 +23,10 @@ export function NavLink({
   return (
     <Link href={target}>
       <Button
-        variant={type}
+        variant={variant}
         className={cn(
-          type === 'link' ? activeLinkStyles : '',
-          'relative',
+          variant === 'link' ? activeLinkStyles : '',
+          'relative font-bold tracking-wider',
           className
         )}
       >

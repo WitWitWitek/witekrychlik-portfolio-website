@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@witekrychlik/ui-components';
-
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 type Props = {
   routes: Routes;
 };
@@ -18,7 +18,9 @@ export default function NavMobile({ routes }: Props) {
   return (
     <div>
       <Sheet>
-        <SheetTrigger className="md:hidden">Hamburger</SheetTrigger>
+        <SheetTrigger className="flex justify-center md:hidden">
+          <HamburgerMenuIcon className="h-7 w-7 text-secondary" />
+        </SheetTrigger>
         <SheetContent
           side="top"
           className="h-full w-full sm:w-[540px] bg-slate-950 flex flex-col items-center justify-center gap-2 md:hidden"
@@ -35,12 +37,13 @@ export default function NavMobile({ routes }: Props) {
                 target={route.target}
                 label={route.label}
                 className="text-4xl"
+                variant="link"
               />
             ))}
             <NavLink
               target="/kontakt"
               label="Kontakt"
-              type="link"
+              variant="link"
               className="text-4xl"
             />
           </nav>

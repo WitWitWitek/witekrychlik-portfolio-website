@@ -27,7 +27,7 @@ const routes: Routes = [
 
 export default function Navbar() {
   return (
-    <header className="fixed z-10 top-0 bg-slate-950 px-4 md:px-[100px] h-14 w-full flex items-center border-b border-white border-opacity-20">
+    <header className="fixed z-10 top-0 bg-slate-950 px-4 md:px-[100px] h-14 w-full flex items-center justify-between border-b border-white border-opacity-20">
       <Link
         href="/"
         className="w-9 h-9 relative rounded-md overflow-hidden hover:grayscale"
