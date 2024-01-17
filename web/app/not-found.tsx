@@ -1,9 +1,9 @@
-import { Button } from '@witekrychlik/ui-components';
+import { Button, Section } from '@witekrychlik/ui-components';
 import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center bg-slate-950 p-section-lg gap-2">
+    <Section className="w-full h-screen flex flex-col items-center justify-center bg-slate-950 gap-2 text-center">
       <h2 className="text-7xl font-bold uppercase text-white">Not Found</h2>
       <p className=" text-muted-foreground">
         Could not find requested resource
@@ -11,6 +11,6 @@ export default function NotFound() {
       <Link href="/">
         <Button variant="secondary">Return Home</Button>
       </Link>
-    </div>
+    </Section>
   );
 }

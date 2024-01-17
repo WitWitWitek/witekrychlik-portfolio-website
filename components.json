@@ -11,7 +11,7 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "libs/ui-components/src/components",
-    "utils": "libs/ui-components/src"
+    "components": "@witekrychlik/ui-components/src/components",
+    "utils": "@witekrychlik/ui-components/src"
   }
 }

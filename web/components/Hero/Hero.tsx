@@ -1,7 +1,6 @@
-import { Button } from '@witekrychlik/ui-components';
+import { Button, Section } from '@witekrychlik/ui-components';
 import Image from 'next/image';
 import Link from 'next/link';
-import Section from 'libs/ui-components/src/components/ui/section';
 
 export default function Hero() {
   return (

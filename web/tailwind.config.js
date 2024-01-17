@@ -1,8 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
   content: [
