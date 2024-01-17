@@ -1,16 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import {
-  NavLink,
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetTrigger,
-} from '@witekrychlik/ui-components';
 import Image from 'next/image';
+import NavDesktop from './NavDesktop/NavDesktop';
+import NavMobile from './NavMobile/NavMobile';
 
-const routes: { target: string; label: string }[] = [
+export type Routes = { target: string; label: string }[];
+const routes: Routes = [
   {
     target: '/',
     label: 'Strona główna',
@@ -38,28 +34,8 @@ export default function Navbar() {
       >
         <Image src="/logo.svg" alt="Logo strony witekrychlik.com.pl" fill />
       </Link>
-      <nav className="hidden md:flex flex-row gap-2 grow px-2">
-        {routes.map((route, i) => (
-          <NavLink key={i} target={route.target} label={route.label} />
-        ))}
-      </nav>
-      <div className="hidden md:block">
-        <NavLink target="/kontakt" label="Kontakt" type="secondary" />
-      </div>
-      <div>
-        <Sheet>
-          <SheetTrigger className="md:hidden">Hamburger</SheetTrigger>
-          <SheetContent
-            side="right"
-            className="w-full sm:w-[540px] bg-slate-950 md:hidden"
-          >
-            <SheetDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </SheetDescription>
-          </SheetContent>
-        </Sheet>
-      </div>
+      <NavMobile routes={routes} />
+      <NavDesktop routes={routes} />
     </header>
   );
 }

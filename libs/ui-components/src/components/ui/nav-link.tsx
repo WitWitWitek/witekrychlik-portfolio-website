@@ -5,13 +5,18 @@ import { Button } from './button';
 import { usePathname } from 'next/navigation';
 import { cn } from '../../utils';
 
-interface NavLinkProps {
+interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   target: string;
   label: string;
   type?: 'link' | 'secondary';
 }
 
-export function NavLink({ target, label, type = 'link' }: NavLinkProps) {
+export function NavLink({
+  target,
+  label,
+  type = 'link',
+  className,
+}: NavLinkProps) {
   const pathname = usePathname();
   const activeLinkStyles =
     pathname === target ? 'text-linear-gradient' : 'text-slate-100';
@@ -19,7 +24,11 @@ export function NavLink({ target, label, type = 'link' }: NavLinkProps) {
     <Link href={target}>
       <Button
         variant={type}
-        className={cn(type === 'link' ? activeLinkStyles : '', 'relative')}
+        className={cn(
+          type === 'link' ? activeLinkStyles : '',
+          'relative',
+          className
+        )}
       >
         {label}
       </Button>
