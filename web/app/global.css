@@ -12,12 +12,17 @@
 }
 
 :root {
+  --pink: #b116ce;
+  --red: #ff5e69;
+  --orange: #ff8a56;
+  --yellow: #ffa84b;
+  --faded-red: #ff5e6951;
   --linear-gradient: linear-gradient(
     to right,
-    #b116ce,
-    #ff5e69,
-    #ff8a56,
-    #ffa84b
+    var(--pink),
+    var(--red),
+    var(--orange),
+    var(--yellow)
   );
 }
 
@@ -38,6 +43,10 @@
     background: var(--linear-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .glow {
+    box-shadow: 0px 0px 45px var(--faded-red);
   }
 }
 

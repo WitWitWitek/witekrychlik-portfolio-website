@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="h-full flex justify-center md:justify-end items-center md:grow z-[1]">
-        <div className="relative w-[250px] h-[250px] sm:w-[200px] sm:h-[200px] md:min-w-32 md:w-[60%] md:h-[60%] rounded-md overflow-hidden">
+        <div className="relative aspect-square w-[250px] sm:w-[200px] md:min-w-32 md:w-[60%] overflow-hidden rounded-md glow">
           <Image src="/logo.svg" alt="Logo strony witekrychlick.com.pl" fill />
         </div>
       </div>
