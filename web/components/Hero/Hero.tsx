@@ -1,9 +1,9 @@
 import { Button, Section, SocialMediaLink } from '@witekrychlik/ui-components';
 import Image from 'next/image';
-
+import { hero } from 'web/constants';
 export default function Hero() {
   return (
-    <Section className="bg-slate-950 flex flex-col-reverse justify-evenly md:flex-row gap-x-40 gap-y-2 relative overflow-hidden">
+    <Section className="flex flex-col-reverse justify-evenly md:flex-row gap-x-40 gap-y-2 relative overflow-hidden">
       <img src="/color-sharp.png" className="absolute top-0 z-0 left-0" />
       <img
         src="/color-sharp2.png"
@@ -24,11 +24,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex flex-col gap-2 md:gap-4 w-[92%] text-xl">
-          <p className="hidden sm:block text-justify">
-            Jestem pasjonatem web developmentu, gotowym przekształcić Twoje
-            pomysły w wirtualną rzeczywistość. Daj mi szansę pomóc Ci w
-            urzeczywistnieniu Twoich internetowych marzeń!
-          </p>
+          <p className="hidden sm:block text-justify">{hero.description}</p>
           <div className="flex flex-wrap md:flex-nowrap w-full gap-2 md:gap-4">
             <Button
               variant="default"
