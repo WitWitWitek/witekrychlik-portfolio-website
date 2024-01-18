@@ -23,10 +23,10 @@ export default function NavMobile({ routes }: Props) {
         </SheetTrigger>
         <SheetContent
           side="top"
-          className="h-full w-full sm:w-[540px] bg-slate-950 flex flex-col items-center justify-center gap-2 md:hidden"
+          className="h-full w-full md:w-[540px] bg-slate-950 flex flex-col items-center justify-center gap-2 md:hidden"
         >
           <SheetHeader>
-            <SheetTitle className="text-4xl text-slate-100 mb-6">
+            <SheetTitle className="text-3xl text-slate-100 mb-6">
               Menu:
             </SheetTitle>
           </SheetHeader>
@@ -36,7 +36,7 @@ export default function NavMobile({ routes }: Props) {
                 key={i}
                 target={route.target}
                 label={route.label}
-                className="text-4xl"
+                className="text-3xl"
                 variant="link"
               />
             ))}
@@ -44,7 +44,7 @@ export default function NavMobile({ routes }: Props) {
               target="/kontakt"
               label="Kontakt"
               variant="link"
-              className="text-4xl"
+              className="text-3xl"
             />
           </nav>
         </SheetContent>

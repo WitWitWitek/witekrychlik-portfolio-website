@@ -9,13 +9,23 @@ type Props = {
 export default function NavDesktop({ routes }: Props) {
   return (
     <>
-      <nav className="hidden md:flex flex-row gap-2 grow px-2">
+      <nav className="hidden md:flex flex-row justify-end gap-0 lg:gap-2 grow shrink-1 lg:px-2">
         {routes.map((route, i) => (
-          <NavLink key={i} target={route.target} label={route.label} />
+          <NavLink
+            key={i}
+            target={route.target}
+            label={route.label}
+            className="text-lg"
+          />
         ))}
       </nav>
       <div className="hidden md:block">
-        <NavLink target="/kontakt" label="Kontakt" variant="secondary" />
+        <NavLink
+          target="/kontakt"
+          label="Kontakt"
+          variant="secondary"
+          className="text-lg"
+        />
       </div>
     </>
   );

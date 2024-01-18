@@ -27,10 +27,10 @@ const routes: Routes = [
 
 export default function Navbar() {
   return (
-    <header className="fixed z-10 top-0 bg-slate-950 px-4 md:px-[100px] h-14 w-full flex items-center justify-between border-b border-white border-opacity-20">
+    <header className="fixed z-10 top-0 backdrop-blur-lg px-4 md:px-24 lg:px-36 h-16 w-full flex items-center justify-between border-b border-white border-opacity-20">
       <Link
         href="/"
-        className="w-9 h-9 relative rounded-md overflow-hidden hover:grayscale"
+        className="w-12 h-12 relative rounded-md overflow-hidden hover:grayscale shrink-0"
       >
         <Image src="/logo.svg" alt="Logo strony witekrychlik.com.pl" fill />
       </Link>
