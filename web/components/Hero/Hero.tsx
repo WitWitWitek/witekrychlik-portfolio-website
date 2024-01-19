@@ -8,13 +8,15 @@ export default function Hero() {
     <Section className="min-h-screen md:h-screen flex flex-col-reverse justify-evenly md:flex-row gap-x-40 gap-y-2 relative overflow-hidden">
       <div className="h-full lg:max-w-2xl flex flex-col justify-center gap-2 md:gap-4 text-white z-[1]">
         <div className="text-4xl md:text-5xl lg:text-6xl flex flex-col gap-2 md:gap-4">
-          <p>Cześć! 👋</p>
-          <div>
-            Jestem{' '}
-            <div className="font-bold text-linear-gradient break-keep lg:inline">
-              Witold Rychlik
+          <h1 className="flex flex-col gap-2 md:gap-4">
+            <p>Cześć! 👋</p>
+            <div>
+              Jestem{' '}
+              <div className="font-bold text-linear-gradient break-keep lg:inline">
+                Witold Rychlik
+              </div>
             </div>
-          </div>
+          </h1>
           <div className="flex items-center gap-5 text-[18px] sm:text-[20px] w-[92%]">
             <div className="grow h-[1px] linear-gradient" />
             <span className="italic">Web developer</span>

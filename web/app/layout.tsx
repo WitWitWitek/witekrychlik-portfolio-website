@@ -15,10 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="main-font bg-slate-950 relative">
-        <img src="/color-sharp.png" className="fixed top-0 z-0 left-0" />
+        <img src="/color-sharp.png" className="fixed top-0 z-[-1] left-0" />
         <img
           src="/color-sharp2.png"
-          className="hidden sm:block fixed bottom-10 z-0 right-0"
+          className="hidden sm:block fixed bottom-10 z-[-1] right-0"
         />
         <Navbar />
         {children}
