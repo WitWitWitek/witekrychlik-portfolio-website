@@ -1,14 +1,10 @@
 import { Button, Section, SocialMediaLink } from '@witekrychlik/ui-components';
 import Image from 'next/image';
-import { hero } from 'web/constants';
+import { hero } from '../../constants';
+
 export default function Hero() {
   return (
     <Section className="flex flex-col-reverse justify-evenly md:flex-row gap-x-40 gap-y-2 relative overflow-hidden">
-      <img src="/color-sharp.png" className="absolute top-0 z-0 left-0" />
-      <img
-        src="/color-sharp2.png"
-        className="hidden sm:block absolute bottom-10 z-0 right-0"
-      />
       <div className="h-full lg:max-w-2xl flex flex-col justify-center gap-2 md:gap-4 text-white z-[1]">
         <div className="text-4xl md:text-5xl lg:text-6xl flex flex-col gap-2 md:gap-4">
           <p>Cześć! 👋</p>
