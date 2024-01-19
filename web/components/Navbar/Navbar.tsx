@@ -4,26 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import NavDesktop from './NavDesktop/NavDesktop';
 import NavMobile from './NavMobile/NavMobile';
-
-export type Routes = { target: string; label: string }[];
-const routes: Routes = [
-  {
-    target: '/',
-    label: 'Strona główna',
-  },
-  {
-    target: '/projekty',
-    label: 'Projekty',
-  },
-  {
-    target: '/technologie',
-    label: 'Technologie',
-  },
-  {
-    target: '/uslugi',
-    label: 'Usługi',
-  },
-];
+import { routes } from 'web/constants';
 
 export default function Navbar() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes } from '../Navbar';
+import { Routes } from '../../../constants';
 
 import {
   NavLink,
@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from '@witekrychlik/ui-components';
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+
 type Props = {
   routes: Routes;
 };
@@ -41,7 +42,7 @@ export default function NavMobile({ routes }: Props) {
               />
             ))}
             <NavLink
-              target="/kontakt"
+              target="/contact"
               label="Kontakt"
               variant="link"
               className="text-3xl"

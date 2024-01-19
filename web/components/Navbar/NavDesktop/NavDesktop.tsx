@@ -1,6 +1,6 @@
 import React from 'react';
-import { Routes } from '../Navbar';
 import { NavLink } from '@witekrychlik/ui-components';
+import { Routes } from '../../../constants';
 
 type Props = {
   routes: Routes;
@@ -21,7 +21,7 @@ export default function NavDesktop({ routes }: Props) {
       </nav>
       <div className="hidden md:block">
         <NavLink
-          target="/kontakt"
+          target="/contact"
           label="Kontakt"
           variant="secondary"
           className="text-lg"

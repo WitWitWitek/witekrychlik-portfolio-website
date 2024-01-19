@@ -1,6 +1,7 @@
 import { Button, Section, SocialMediaLink } from '@witekrychlik/ui-components';
 import Image from 'next/image';
 import { hero } from '../../constants';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -22,12 +23,14 @@ export default function Hero() {
         <div className="flex flex-col gap-2 md:gap-4 w-[92%] text-xl">
           <p className="hidden sm:block text-justify">{hero.description}</p>
           <div className="flex flex-wrap md:flex-nowrap w-full gap-2 md:gap-4">
-            <Button
-              variant="default"
-              className="linear-gradient font-bold tracking-wider"
-            >
-              Formularz kontaktowy
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="default"
+                className="linear-gradient font-bold tracking-wider"
+              >
+                Formularz kontaktowy
+              </Button>
+            </Link>
             <Button variant="secondary" className="font-bold tracking-wider">
               Technologie
             </Button>
