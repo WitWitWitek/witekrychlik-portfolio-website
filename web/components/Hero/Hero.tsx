@@ -4,7 +4,7 @@ import { hero } from '../../constants';
 
 export default function Hero() {
   return (
-    <Section className="flex flex-col-reverse justify-evenly md:flex-row gap-x-40 gap-y-2 relative overflow-hidden">
+    <Section className="min-h-screen md:h-screen flex flex-col-reverse justify-evenly md:flex-row gap-x-40 gap-y-2 relative overflow-hidden">
       <div className="h-full lg:max-w-2xl flex flex-col justify-center gap-2 md:gap-4 text-white z-[1]">
         <div className="text-4xl md:text-5xl lg:text-6xl flex flex-col gap-2 md:gap-4">
           <p>Cześć! 👋</p>

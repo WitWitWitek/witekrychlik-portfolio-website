@@ -9,16 +9,16 @@ import { technologies } from '../../constants';
 
 export default function Tech() {
   return (
-    <Section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    <Section className="min-h-screen grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
       {technologies.map((tech, i) => (
         <Card
           key={i}
-          className="h-[300px] p-5 md:p-8 bg-transparent flex flex-col items-center justify-between z-[1]"
+          className="p-5 md:p-8 bg-transparent flex flex-col items-center justify-between z-[1]"
         >
-          <CardContent className="relative w-[70%] aspect-square">
+          <CardContent className="relative w-[45%] aspect-square">
             <Image src={tech.logo} alt={tech.alt} fill />
           </CardContent>
-          <CardFooter className="text-center text-secondary justify-center text-4xl font-bold">
+          <CardFooter className="text-center text-secondary justify-center text-xl sm:text-2xl md:text-3xl font-bold mt-6 tracking-wider">
             {tech.name}
           </CardFooter>
         </Card>
