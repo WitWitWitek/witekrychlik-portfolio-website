@@ -25,6 +25,12 @@ const formSchema = z.object({
     .max(100, {
       message: 'Imię i nazwisko powinny zawierać maksymalnie 100 znaków.',
     }),
+  email: z
+    .string()
+    .min(2, {
+      message: 'Email powinien zawierać co najmniej 2 znaki.',
+    })
+    .email({ message: 'Adres e-mail nie jest poprawny.' }),
   message: z
     .string()
     .min(2, {
@@ -40,12 +46,20 @@ export default function ContactPage() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullname: '',
+      email: '',
       message: '',
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    await fetch('/api/send-mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ ...values }),
+    });
   }
 
   return (
@@ -68,6 +82,26 @@ export default function ContactPage() {
                     <Input
                       placeholder="Jan Kowalski"
                       className="text-secondary text-lg"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            ></FormField>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-secondary font-bold text-2xl">
+                    E-mail:
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="jan.kowalski@mail.com"
+                      className="text-secondary text-lg"
+                      type="email"
                       {...field}
                     />
                   </FormControl>
