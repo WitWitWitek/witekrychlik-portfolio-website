@@ -46,7 +46,24 @@
   }
 
   .glow {
-    box-shadow: 0px 0px 45px var(--faded-red);
+    position: relative;
+  }
+
+  .glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      var(--pink),
+      var(--red),
+      var(--orange),
+      var(--yellow)
+    );
+    border-radius: inherit;
+    filter: blur(0.5rem);
+    /* animation: rotation 3s linear infinite; */
+    z-index: -1;
   }
 }
 
