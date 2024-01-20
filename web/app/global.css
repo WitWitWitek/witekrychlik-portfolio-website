@@ -1,13 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: inherit;
   scroll-behavior: smooth;
 }
 
@@ -29,10 +27,6 @@
 @layer components {
   .p-section-lg {
     @apply px-[100px] py-14;
-  }
-
-  .main-font {
-    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   .linear-gradient {
