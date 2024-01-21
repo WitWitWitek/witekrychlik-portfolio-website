@@ -11,10 +11,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+  useToast,
 } from '@witekrychlik/ui-components';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 const formSchema = z.object({
   fullname: z
@@ -42,6 +44,9 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,14 +57,30 @@ export default function ContactPage() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    await fetch('/api/send-mail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ ...values }),
-    });
+    try {
+      setLoading(() => true);
+      const response = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...values }),
+      });
+      const data = (await response.json()) as { message: string };
+      console.log(data);
+      form.reset();
+      toast({
+        title: data.message,
+        variant: response.ok ? 'default' : 'destructive',
+      });
+    } catch (err) {
+      toast({
+        title: 'Wystąpił problem w trakcie wysyłania wiadomości.',
+        variant: 'destructive',
+      });
+    } finally {
+      setLoading(() => false);
+    }
   }
 
   return (
@@ -73,6 +94,7 @@ export default function ContactPage() {
             <FormField
               control={form.control}
               name="fullname"
+              disabled={loading}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-secondary font-bold text-2xl">
@@ -92,6 +114,7 @@ export default function ContactPage() {
             <FormField
               control={form.control}
               name="email"
+              disabled={loading}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-secondary font-bold text-2xl">
@@ -112,6 +135,7 @@ export default function ContactPage() {
             <FormField
               control={form.control}
               name="message"
+              disabled={loading}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-secondary font-bold text-2xl">
@@ -132,6 +156,7 @@ export default function ContactPage() {
               type="submit"
               variant="secondary"
               className="font-bold tracking-wider"
+              disabled={loading}
             >
               Wyślij
             </Button>

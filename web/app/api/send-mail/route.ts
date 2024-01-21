@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
 
     if (!fullname || !email || !message) {
       return NextResponse.json(
-        { message: 'Wszystkie pola są wymagane.' },
+        { message: 'Wszystkie pola są wymagane!' },
         { status: 500 }
       );
     }
@@ -26,9 +26,14 @@ export async function POST(request: NextRequest) {
 
     await transporter.sendMail({ ...mailOptions });
 
-    return NextResponse.json({ message: 'Email wysłany' }, { status: 200 });
+    return NextResponse.json(
+      { message: 'Email został wysłany.' },
+      { status: 200 }
+    );
   } catch (error) {
-    console.log(error);
-    return NextResponse.json({ message: 'Wystąpił błąd' }, { status: 500 });
+    return NextResponse.json(
+      { message: 'Wystąpił błąd w trakcie wysyłania wiadomości.' },
+      { status: 500 }
+    );
   }
 }

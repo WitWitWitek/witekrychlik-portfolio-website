@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar/Navbar';
 import './global.css';
 import { Chakra_Petch } from 'next/font/google';
+import { Toaster } from '@witekrychlik/ui-components';
 
 export const metadata = {
   title: 'Witek Rychlik | web dev',
@@ -29,6 +30,7 @@ export default function RootLayout({
         />
         <Navbar />
         {children}
+        <Toaster />
       </body>
     </html>
   );
