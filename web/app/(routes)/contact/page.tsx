@@ -67,8 +67,7 @@ export default function ContactPage() {
         body: JSON.stringify({ ...values }),
       });
       const data = (await response.json()) as { message: string };
-      console.log(data);
-      form.reset();
+      response.ok && form.reset();
       toast({
         title: data.message,
         variant: response.ok ? 'default' : 'destructive',
