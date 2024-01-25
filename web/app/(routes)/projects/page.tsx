@@ -66,7 +66,7 @@ export default async function ProjectsPage() {
                   </Button>
                 )}
                 <Button asChild variant="secondary" className="grow">
-                  <Link href="/projects">Więcej</Link>
+                  <Link href={`/projects/${project.slug}`}>Więcej</Link>
                 </Button>
               </div>
             </CardContent>

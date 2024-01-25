@@ -5,3 +5,7 @@ export type Project = {
   description: string;
   coverImage: string;
 };
+
+export type FullProject = Omit<Project, 'description'> & {
+  content: string;
+};
