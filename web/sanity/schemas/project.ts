@@ -24,6 +24,11 @@ export default {
       title: 'Link to GitHub',
     }),
     defineField({
+      name: 'live',
+      type: 'url',
+      title: 'Link to Live',
+    }),
+    defineField({
       name: 'coverImage',
       type: 'image',
       title: 'Cover Image',
