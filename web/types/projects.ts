@@ -4,6 +4,7 @@ export type Project = {
   title: string;
   slug: string;
   github: string;
+  live: string;
   description: string;
   coverImage: string;
 };

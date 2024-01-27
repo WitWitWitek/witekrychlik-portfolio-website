@@ -24,7 +24,7 @@ async function getProjectsData() {
   return projectsData;
 }
 
-export const revalidate = 30;
+export const revalidate = 60000;
 
 export default async function ProjectsPage() {
   const projects: Project[] = await getProjectsData();
