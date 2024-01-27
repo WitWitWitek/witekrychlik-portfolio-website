@@ -6,7 +6,7 @@ export const routes: Routes = [
     label: 'Strona główna',
   },
   {
-    target: '/projects',
+    target: '/projekty',
     label: 'Projekty',
   },
   {
