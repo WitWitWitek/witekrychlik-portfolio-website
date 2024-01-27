@@ -42,7 +42,7 @@ export default function NavMobile({ routes }: Props) {
               />
             ))}
             <NavLink
-              target="/contact"
+              target="/kontakt"
               label="Kontakt"
               variant="link"
               className="text-3xl"

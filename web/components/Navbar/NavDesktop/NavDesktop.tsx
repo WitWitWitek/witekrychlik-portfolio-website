@@ -21,7 +21,7 @@ export default function NavDesktop({ routes }: Props) {
       </nav>
       <div className="hidden md:block">
         <NavLink
-          target="/contact"
+          target="/kontakt"
           label="Kontakt"
           variant="secondary"
           className="text-lg"

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import NavDesktop from './NavDesktop/NavDesktop';
 import NavMobile from './NavMobile/NavMobile';
-import { routes } from 'web/constants';
+import { routes } from '../../constants';
 
 export default function Navbar() {
   return (
