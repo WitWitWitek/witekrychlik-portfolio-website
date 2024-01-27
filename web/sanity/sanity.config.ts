@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'portfolio projects',
 
-  projectId: 'zqsp7xwb',
+  projectId: process.env.SANITY_PROJECT_ID as string,
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
