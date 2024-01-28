@@ -4,7 +4,6 @@ import {
   CardFooter,
   CardContent,
 } from '@witekrychlik/ui-components';
-import Image from 'next/image';
 import { technologies } from '../../constants';
 
 export default function Tech() {
@@ -19,8 +18,12 @@ export default function Tech() {
             key={i}
             className="p-5 md:p-8 bg-transparent flex flex-col items-center justify-between z-[1]"
           >
-            <CardContent className="relative w-[45%] aspect-square">
-              <Image src={tech.logo} alt={tech.alt} fill />
+            <CardContent className="relative p-0 w-[80%] aspect-square grid justify-center">
+              <img
+                src={tech.logo}
+                alt={tech.alt}
+                className="w-full aspect-square"
+              />
             </CardContent>
             <CardFooter className="text-center text-secondary justify-center text-xl sm:text-2xl md:text-3xl font-bold mt-6 tracking-wider">
               {tech.name}
