@@ -26,7 +26,7 @@ async function getProjectsData() {
   return projectsData;
 }
 
-export const revalidate = 60000;
+export const revalidate = 1800;
 
 export const metadata: Metadata = {
   title: `${MetadataEnum.title} | Projekty`,

@@ -36,13 +36,16 @@ export async function generateMetadata({
   };
 }
 
-export const revalidate = 60000;
+export const revalidate = 1800;
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const article: FullProject = await getArticleData(params.slug);
   return (
-    <Section className="w-[75%] grid gap-3 lg:gap-5 justify-items-center m-auto">
-      <div className="relative w-full h-[200px] lg:h-[300px] rounded overflow-hidden">
+    <Section className="w-full md:w-[70%] grid gap-3 lg:gap-5 justify-items-center m-auto">
+      <h1 className="text-secondary text-4xl md:text-6xl m-auto text-center">
+        {article.title}
+      </h1>
+      <div className="relative w-full aspect-video rounded overflow-hidden">
         <Image
           src={urlFor(article.coverImage).url()}
           fill
@@ -51,7 +54,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           className="object-cover"
         />
       </div>
-      <h1 className="text-secondary text-7xl m-auto">{article.title}</h1>
+
       {(article.live || article.github) && (
         <div className="flex flex-row gap-3 lg:gap-5">
           {article.github && (
@@ -81,7 +84,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           )}
         </div>
       )}
-      <div className=" prose prose-white w-full max-w-none prose-lg text-justify m-auto">
+      <div className="prose prose-white w-full max-w-none prose-lg text-justify m-auto">
         <PortableText value={article.content} />
       </div>
       <Button asChild variant="secondary" className="w-full">
