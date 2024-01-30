@@ -29,6 +29,11 @@ export default {
       title: 'Link to Live',
     }),
     defineField({
+      title: 'Data publikacji',
+      name: 'releaseDate',
+      type: 'date',
+    }),
+    defineField({
       name: 'coverImage',
       type: 'image',
       title: 'Cover Image',

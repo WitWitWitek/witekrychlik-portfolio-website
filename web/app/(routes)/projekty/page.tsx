@@ -14,7 +14,7 @@ import { MetadataEnum } from '../../../constants';
 import { Metadata } from 'next';
 
 async function getProjectsData() {
-  const query = `*[_type == 'projects'] {
+  const query = `*[_type == "projects"] | order(releaseDate desc) {
     title,
     description,
     github,
