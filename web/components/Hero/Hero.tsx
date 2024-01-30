@@ -45,10 +45,12 @@ export default function Hero() {
             <SocialMediaLink
               target="https://github.com/WitWitWitek"
               icon="github"
+              title="Konto na GitHub"
             ></SocialMediaLink>
             <SocialMediaLink
               target="https://www.linkedin.com/in/witold-rychlik-86b579195/"
               icon="linkedin"
+              title="Konto na LinkediIn"
             ></SocialMediaLink>
           </div>
         </div>
@@ -56,7 +58,7 @@ export default function Hero() {
       <div className="h-full flex justify-center md:justify-end items-center md:grow z-[1]">
         <div className="relative aspect-square w-[250px] sm:w-[200px] md:min-w-32 md:w-[60%] rounded-md glow">
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="Logo strony witekrychlick.com.pl"
             className="w-full h-full"
           />

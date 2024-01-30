@@ -35,10 +35,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${font.variable} font-sans bg-slate-950 relative`}>
-        <img src="/color-sharp.png" className="fixed top-0 z-[-1] left-0" />
         <img
-          src="/color-sharp2.png"
+          src="/color-sharp.webp"
+          className="fixed top-0 z-[-1] left-0"
+          alt="layout background image-left"
+        />
+        <img
+          src="/color-sharp2.webp"
           className="hidden sm:block fixed bottom-10 z-[-1] right-0"
+          alt="layout background image-left"
         />
         <Navbar />
         {children}

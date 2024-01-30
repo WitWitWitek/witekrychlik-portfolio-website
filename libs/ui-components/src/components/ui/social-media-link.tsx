@@ -4,13 +4,15 @@ import Link from 'next/link';
 interface SocialMediaLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   target: string;
+  title: string;
   icon: 'github' | 'linkedin';
 }
 
-export function SocialMediaLink({ target, icon }: SocialMediaLinkProps) {
+export function SocialMediaLink({ target, icon, title }: SocialMediaLinkProps) {
   return (
     <Link
       href={target}
+      title={title}
       target="_blank"
       className="w-16 h-16 flex justify-center items-center rounded-full border-secondary border-2 hover:linear-gradient"
     >
