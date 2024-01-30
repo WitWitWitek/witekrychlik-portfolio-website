@@ -9,6 +9,6 @@ export type Project = {
   coverImage: string;
 };
 
-export type FullProject = Omit<Project, 'description'> & {
+export interface FullProject extends Project {
   content: TypedObject | TypedObject[];
-};
+}

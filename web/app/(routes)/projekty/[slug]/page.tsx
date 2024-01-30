@@ -6,12 +6,15 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { GitHubLogoIcon, GlobeIcon } from '@radix-ui/react-icons';
 type ArticlePageProps = { params: { slug: string } };
+import type { Metadata } from 'next';
+import { MetadataEnum } from '../../../../constants';
 
 async function getArticleData(slug: string) {
   const query = `
       *[_type == "projects" && slug.current == '${slug}'] {
           "slug": slug.current,
             title,
+            description,
             content,
             coverImage,
             live,
@@ -20,6 +23,17 @@ async function getArticleData(slug: string) {
 
   const articleData = await client.fetch(query);
   return articleData;
+}
+
+export async function generateMetadata({
+  params,
+}: ArticlePageProps): Promise<Metadata> {
+  const project: FullProject = await getArticleData(params.slug);
+
+  return {
+    title: `${MetadataEnum.title} | ${project.title}`,
+    desription: project.description,
+  };
 }
 
 export const revalidate = 60000;

@@ -10,6 +10,8 @@ import { Card } from '@witekrychlik/ui-components';
 import Link from 'next/link';
 import Image from 'next/image';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import { MetadataEnum } from '../../../constants';
+import { Metadata } from 'next';
 
 async function getProjectsData() {
   const query = `*[_type == 'projects'] {
@@ -25,6 +27,10 @@ async function getProjectsData() {
 }
 
 export const revalidate = 60000;
+
+export const metadata: Metadata = {
+  title: `${MetadataEnum.title} | Projekty`,
+};
 
 export default async function ProjectsPage() {
   const projects: Project[] = await getProjectsData();
