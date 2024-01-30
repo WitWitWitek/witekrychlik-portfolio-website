@@ -23,7 +23,7 @@ const useContactForm = () => {
     try {
       setIsLoading(() => true);
       setIsSuccess(() => false);
-      const response = await fetch('/api/send-mail', {
+      const response = await fetch('api/send-mail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

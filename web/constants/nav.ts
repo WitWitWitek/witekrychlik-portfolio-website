@@ -13,8 +13,8 @@ export const routes: Routes = [
     target: '/technologie',
     label: 'Technologie',
   },
-  {
-    target: '/uslugi',
-    label: 'Usługi',
-  },
+  // {
+  //   target: '/uslugi',
+  //   label: 'Usługi',
+  // },
 ];

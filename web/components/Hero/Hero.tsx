@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="flex flex-col gap-2 md:gap-4 w-[92%] text-xl">
           <p className="hidden sm:block text-justify">{hero.description}</p>
           <div className="flex flex-wrap md:flex-nowrap w-full gap-2 md:gap-4">
-            <Link href="/contact">
+            <Link href="/kontakt">
               <Button
                 variant="default"
                 className="linear-gradient font-bold tracking-wider"
@@ -32,9 +32,11 @@ export default function Hero() {
                 Formularz kontaktowy
               </Button>
             </Link>
-            <Button variant="secondary" className="font-bold tracking-wider">
-              Technologie
-            </Button>
+            <Link href="/technologie">
+              <Button variant="secondary" className="font-bold tracking-wider">
+                Technologie
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="hidden sm:flex flex-col gap-2 md:gap-4 text-xl">

@@ -27,8 +27,8 @@ export const revalidate = 60000;
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const article: FullProject = await getArticleData(params.slug);
   return (
-    <Section className="grid gap-3 lg:gap-5 justify-items-center">
-      <div className="relative w-full lg:w-[55%] h-[200px] lg:h-[300px] rounded overflow-hidden">
+    <Section className="w-[75%] grid gap-3 lg:gap-5 justify-items-center m-auto">
+      <div className="relative w-full h-[200px] lg:h-[300px] rounded overflow-hidden">
         <Image
           src={urlFor(article.coverImage).url()}
           fill
@@ -67,10 +67,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           )}
         </div>
       )}
-      <div className="prose prose-white prose-lg text-justify m-auto">
+      <div className=" prose prose-white w-full max-w-none prose-lg text-justify m-auto">
         <PortableText value={article.content} />
       </div>
-      <Button asChild variant="secondary" className="w-full lg:w-[55%]">
+      <Button asChild variant="secondary" className="w-full">
         <Link href="/projekty">Powrót</Link>
       </Button>
     </Section>
