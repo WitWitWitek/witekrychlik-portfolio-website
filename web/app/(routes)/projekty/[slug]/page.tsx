@@ -32,7 +32,7 @@ export async function generateMetadata({
 
   return {
     title: `${MetadataEnum.title} | ${project.title}`,
-    desription: project.description,
+    description: project.description,
   };
 }
 
