@@ -36,7 +36,7 @@ export async function generateMetadata({
   };
 }
 
-export const revalidate = 1800;
+export const revalidate = 60;
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const article: FullProject = await getArticleData(params.slug);

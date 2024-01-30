@@ -26,7 +26,7 @@ async function getProjectsData() {
   return projectsData;
 }
 
-export const revalidate = 1800;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: `${MetadataEnum.title} | Projekty`,
@@ -57,7 +57,7 @@ export default async function ProjectsPage() {
               <h3 className="text-3xl lg:text-3xl tracking-wider font-extrabold">
                 {project.title}
               </h3>
-              <p>{project.description.substring(0, 200) + '...'}</p>
+              <p>{project.description.substring(0, 200)}</p>
               <div className="flex flex-row gap-3 lg:gap-5">
                 {project.github && (
                   <Button
@@ -65,7 +65,11 @@ export default async function ProjectsPage() {
                     variant="default"
                     className="grow linear-gradient"
                   >
-                    <Link href={project.github} className="flex flex-row gap-1">
+                    <Link
+                      href={project.github}
+                      className="flex flex-row gap-1"
+                      target="_blank"
+                    >
                       <GitHubLogoIcon />
                       GitHub
                     </Link>
