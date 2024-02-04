@@ -1,8 +1,6 @@
-export const technologies: {
-  name: string;
-  logo: string;
-  alt: string;
-}[] = [
+import { Technology } from '../types';
+
+export const technologies: Technology[] = [
   {
     name: 'HTML',
     logo: '/tech/HTML5.svg',

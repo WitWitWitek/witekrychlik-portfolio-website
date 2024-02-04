@@ -1,10 +1,6 @@
-import {
-  Section,
-  Card,
-  CardFooter,
-  CardContent,
-} from '@witekrychlik/ui-components';
+import { Section } from '@witekrychlik/ui-components';
 import { technologies } from '../../constants';
+import TechCard from './TechCard/TechCard';
 
 export default function Tech() {
   return (
@@ -17,21 +13,7 @@ export default function Tech() {
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
         {technologies.map((tech, i) => (
-          <Card
-            key={i}
-            className="p-5 md:p-8 bg-transparent flex flex-col items-center justify-between z-[1]"
-          >
-            <CardContent className="relative p-0 w-[80%] aspect-square grid justify-center">
-              <img
-                src={tech.logo}
-                alt={tech.alt}
-                className="w-full aspect-square"
-              />
-            </CardContent>
-            <CardFooter className="text-center text-secondary justify-center text-xl sm:text-2xl lg:text-2xl font-bold mt-6 tracking-wider">
-              {tech.name}
-            </CardFooter>
-          </Card>
+          <TechCard key={i} technology={tech} />
         ))}
       </div>
     </Section>
