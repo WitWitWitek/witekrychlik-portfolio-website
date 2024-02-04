@@ -1,29 +1,15 @@
-import { FullProject } from '../../../../types';
-import { client, urlFor } from '../../../../lib/sanity';
+import { FullProject, ArticlePageProps } from '../../../../types';
+import { urlFor } from '../../../../lib/sanity';
 import { Button, Section } from '@witekrychlik/ui-components';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { GitHubLogoIcon, GlobeIcon } from '@radix-ui/react-icons';
-type ArticlePageProps = { params: { slug: string } };
 import type { Metadata } from 'next';
 import { MetadataEnum } from '../../../../constants';
+import { getArticleData } from '../../../../lib/sanity-actions';
 
-async function getArticleData(slug: string) {
-  const query = `
-      *[_type == "projects" && slug.current == '${slug}'] {
-          "slug": slug.current,
-            title,
-            description,
-            content,
-            coverImage,
-            live,
-            github,
-        }[0]`;
-
-  const articleData = await client.fetch(query);
-  return articleData;
-}
+export const revalidate = 900;
 
 export async function generateMetadata({
   params,
@@ -35,8 +21,6 @@ export async function generateMetadata({
     description: project.description,
   };
 }
-
-export const revalidate = 60;
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const article: FullProject = await getArticleData(params.slug);

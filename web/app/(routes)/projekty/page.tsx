@@ -1,5 +1,5 @@
 import { Project } from '../../../types';
-import { client, urlFor } from '../../../lib/sanity';
+import { urlFor } from '../../../lib/sanity';
 import {
   Button,
   CardContent,
@@ -12,21 +12,9 @@ import Image from 'next/image';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { MetadataEnum } from '../../../constants';
 import { Metadata } from 'next';
+import { getProjectsData } from '../../../lib/sanity-actions';
 
-async function getProjectsData() {
-  const query = `*[_type == "projects"] | order(releaseDate desc) {
-    title,
-    description,
-    github,
-    "slug": slug.current,
-    coverImage
-  }`;
-
-  const projectsData = await client.fetch(query);
-  return projectsData;
-}
-
-export const revalidate = 60;
+export const revalidate = 900;
 
 export const metadata: Metadata = {
   title: `${MetadataEnum.title} | Projekty`,

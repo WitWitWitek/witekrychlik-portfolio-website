@@ -12,3 +12,5 @@ export type Project = {
 export interface FullProject extends Project {
   content: TypedObject | TypedObject[];
 }
+
+export type ArticlePageProps = { params: { slug: string } };
