@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { Routes } from '../../../constants';
 
 import {
@@ -16,9 +16,11 @@ type Props = {
 };
 
 export default function NavMobile({ routes }: Props) {
+  const [sheetOpen, setSheetOpen] = useState(false);
+
   return (
     <div>
-      <Sheet>
+      <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
         <SheetTrigger className="flex justify-center md:hidden">
           <HamburgerMenuIcon className="h-7 w-7 text-secondary" />
         </SheetTrigger>
@@ -38,15 +40,10 @@ export default function NavMobile({ routes }: Props) {
                 target={route.target}
                 label={route.label}
                 className="text-3xl"
+                onClick={() => setSheetOpen(false)}
                 variant="link"
               />
             ))}
-            <NavLink
-              target="/kontakt"
-              label="Kontakt"
-              variant="link"
-              className="text-3xl"
-            />
           </nav>
         </SheetContent>
       </Sheet>

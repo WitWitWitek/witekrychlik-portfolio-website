@@ -17,4 +17,8 @@ export const routes: Routes = [
   //   target: '/uslugi',
   //   label: 'Usługi',
   // },
+  {
+    target: '/kontakt',
+    label: 'Kontakt',
+  },
 ];

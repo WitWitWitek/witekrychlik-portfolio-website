@@ -16,22 +16,24 @@ export function NavLink({
   label,
   variant = 'link',
   className,
+  ...props
 }: NavLinkProps) {
   const pathname = usePathname();
   const activeLinkStyles =
     pathname === target ? 'text-linear-gradient' : 'text-slate-100';
   return (
-    <Link href={target}>
-      <Button
-        variant={variant}
-        className={cn(
-          variant === 'link' ? activeLinkStyles : '',
-          'relative font-bold tracking-wider',
-          className
-        )}
-      >
+    <Button
+      asChild
+      variant={variant}
+      className={cn(
+        variant === 'link' ? activeLinkStyles : '',
+        'relative font-bold tracking-wider',
+        className
+      )}
+    >
+      <Link href={target} {...props}>
         {label}
-      </Button>
-    </Link>
+      </Link>
+    </Button>
   );
 }
