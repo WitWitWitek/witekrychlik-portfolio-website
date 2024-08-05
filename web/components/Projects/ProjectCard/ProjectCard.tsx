@@ -16,7 +16,7 @@ type Props = {
 export default function ProjectCard({ project }: Props) {
   const { title, coverImage, description, github, slug } = project;
   return (
-    <Card className="bg-transparent text-secondary overflow-hidden flex flex-col gap-6 ">
+    <Card className="bg-transparent text-secondary overflow-hidden flex flex-col gap-6">
       <CardTitle className="relative h-[200px] w-full">
         <Image src={coverImage} alt={title} fill className="object-cover" />
       </CardTitle>

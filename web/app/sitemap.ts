@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { routes } from '../constants';
 import { client } from '../lib/sanity';
 
-const BASE_URL = 'https://witekrychlik.com.pl';
+const BASE_URL = 'https://witoldychlik.com.pl';
 
 async function getProjects(): Promise<{ slug: string }[]> {
   const query = `*[_type == 'projects'] {

@@ -13,7 +13,7 @@ export default function Navbar() {
         href="/"
         className="w-12 h-12 relative rounded-md overflow-hidden hover:grayscale shrink-0"
       >
-        <Image src="/logo.svg" alt="Logo strony witekrychlik.com.pl" fill />
+        <Image src="/logo.svg" alt="Logo strony witoldrychlik.com.pl" fill />
       </Link>
       <NavMobile routes={routes} />
       <NavDesktop routes={routes} />

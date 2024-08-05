@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: `https://witekrychlik.com.pl/sitemap.xml`,
+    sitemap: `https://witoldrychlik.com.pl/sitemap.xml`,
   };
 }
