@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Hero from '../../components/Hero/Hero';
 import { MetadataEnum } from '../../constants';
 import Cooperation from '../../components/Cooperation/Cooperation';
+import Offer from '../../components/Offer/Offer';
 
 export const metadata: Metadata = {
   title: `${MetadataEnum.title} | ${MetadataEnum.subtitle}`,
@@ -26,6 +27,7 @@ export default async function Index() {
     <>
       <Hero />
       <Cooperation />
+      <Offer />
     </>
   );
 }
