@@ -26,8 +26,8 @@ export default async function Index() {
   return (
     <>
       <Hero />
-      <Cooperation />
       <Offer />
+      <Cooperation />
     </>
   );
 }

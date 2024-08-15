@@ -29,7 +29,7 @@ export default function Cooperation() {
           damping: 50,
         }}
         viewport={{ once: true, amount: 0.5 }}
-        className="text-4xl md:text-5xl lg:text-6xl text-secondary font-semibold text-center"
+        className="text-4xl md:text-4xl lg:text-5xl text-secondary font-semibold text-center"
       >
         Jak wygląda <span className="text-linear-gradient">współpraca</span>?
       </motion.h2>
